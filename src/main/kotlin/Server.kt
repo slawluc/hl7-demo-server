@@ -16,6 +16,10 @@ fun main() {
     DefaultHapiContext().newServer(Config.port, Config.useTls).apply {
         registerApplication("ADT", "A01", handler)
         registerApplication("ADT", "A02", handler)
+        registerApplication("ORU", "R01", handler)
+        //http://dev.patientsknowbest.com/home/data-model#TOC-Lab-Report
+        //http://dev.patientsknowbest.com/home/hl7-api/messages/oru-r01/laboratory
+
         registerConnectionListener(MyConnectionListener())
         setExceptionHandler(MyExceptionHandler())
         startAndWait()
