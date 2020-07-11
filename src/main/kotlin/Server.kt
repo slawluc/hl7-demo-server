@@ -19,6 +19,8 @@ fun main() {
         registerApplication("ORU", "R01", handler)
         //http://dev.patientsknowbest.com/home/data-model#TOC-Lab-Report
         //http://dev.patientsknowbest.com/home/hl7-api/messages/oru-r01/laboratory
+        //https://hapifhir.github.io/hapi-hl7v2/v281/apidocs/ca/uhn/hl7v2/model/v281/message/ORU_R01.html
+        //https://hapifhir.github.io/hapi-hl7v2/v281/apidocs/index.html
 
         registerConnectionListener(MyConnectionListener())
         setExceptionHandler(MyExceptionHandler())
