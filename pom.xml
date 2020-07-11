@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>hl7-demo-server</artifactId>
+    <groupId>net.lucaya</groupId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>hl7-demo-server</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <kotlin.code.style>official</kotlin.code.style>
+        <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
+        <hapi.version>2.3</hapi.version>
+        <hapi.version.structures>2.3</hapi.version.structures>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+            <version>1.4-M3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ca.uhn.hapi</groupId>
+            <artifactId>hapi-base</artifactId>
+            <version>${hapi.version}</version>
+        </dependency>
+
+
+<!--        <dependency>-->
+<!--            <groupId>ca.uhn.hapi</groupId>-->
+<!--            <artifactId>hapi-hl7overhttp</artifactId>-->
+<!--            <version>${hapi.version}</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>ca.uhn.hapi</groupId>
+            <artifactId>hapi-structures-v21</artifactId>
+            <version>${hapi.version.structures}</version>
+        </dependency>
+        <dependency>
+            <groupId>ca.uhn.hapi</groupId>
+            <artifactId>hapi-structures-v22</artifactId>
+            <version>${hapi.version.structures}</version>
+        </dependency>
+        <dependency>
+            <groupId>ca.uhn.hapi</groupId>
+            <artifactId>hapi-structures-v23</artifactId>
+            <version>${hapi.version.structures}</version>
+        </dependency>
+        <dependency>
+            <groupId>ca.uhn.hapi</groupId>
+            <artifactId>hapi-structures-v231</artifactId>
+            <version>${hapi.version.structures}</version>
+        </dependency>
+        <dependency>
+            <groupId>ca.uhn.hapi</groupId>
+            <artifactId>hapi-structures-v24</artifactId>
+            <version>${hapi.version.structures}</version>
+        </dependency>
+        <dependency>
+            <groupId>ca.uhn.hapi</groupId>
+            <artifactId>hapi-structures-v25</artifactId>
+            <version>${hapi.version.structures}</version>
+        </dependency>
+        <dependency>
+            <groupId>ca.uhn.hapi</groupId>
+            <artifactId>hapi-structures-v251</artifactId>
+            <version>${hapi.version.structures}</version>
+        </dependency>
+        <dependency>
+            <groupId>ca.uhn.hapi</groupId>
+            <artifactId>hapi-structures-v26</artifactId>
+            <version>${hapi.version.structures}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jetty-embedded</artifactId>
+            <version>6.1.26</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>mavenCentral</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+        <repository>
+            <id>bintray.kotlin.kotlin-eap</id>
+            <url>https://dl.bintray.com/kotlin/kotlin-eap</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>bintray.kotlin.kotlin-eap</id>
+            <url>https://dl.bintray.com/kotlin/kotlin-eap</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <build>
+        <sourceDirectory>src/main/kotlin</sourceDirectory>
+        <testSourceDirectory>src/test/kotlin</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>1.4-M3</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <configuration>
+                    <mainClass>MainKt</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
