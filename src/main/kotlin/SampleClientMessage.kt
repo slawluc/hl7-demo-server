@@ -17,6 +17,19 @@ fun main() {
             + "AL1||SEV|001^POLLEN\r"
             + "GT1||0222PL|NOTREAL^BOB^B||STREET^OTHER STREET^CITY^ST^77787|(444)999-3333|(222)777-5555||||MO|111-33-5555||||NOTREAL GILL N|STREET^OTHER STREET^CITY^ST^99999|(111)222-3333\r"
             + "IN1||022254P|4558PD|BLUE CROSS|STREET^OTHER STREET^CITY^ST^00990||(333)333-6666||221K|LENIX|||19980515|19990515|||PATIENT01 TEST D||||||||||||||||||02LL|022LP554")
+
+    val msg2 = "\n" +
+            "MSH|^~\\&|FORMENTRY|AMRS|HL7LISTENER|AMRS|20050217152845||ORU^R01|AMRS20050217152845|P|2.5" +
+            "|1||||||||1^AMRS-ELDORET\\^[http://schemas.openmrs.org/2006/FormEntry/formId]\\^URI\n" +
+            "PID||1^\\^^AMRS|1MT^9^M10||Patient^Jonny^Dee{^}{^}DR|Patient^Momma^Thee^\\^MS|20040101000000^Y|M||B|555 Johnson Road^Apt.555^Indianapolis^IN^46202^USA|||||||||||Indianapolis, IN|||||||||||||||||TRIBE CODE\n" +
+            "PV1|1|O|^^^^^^^^^1^AMRS|2|||1^Mamlin^Joseph^^^^^^^^8^M10^^AMRS|||||||||||||||||||||||||||||||||||||20050217140000|||||||V\n" +
+            "ORC|RE||||||||20050221130000|1^Enterer^Ima^^^^^AMRS\n" +
+            "OBR|1|||1238^MEDICAL RECORD OBSERVATIONS^DCT\n" +
+            "OBX|1|CE|1082^REVIEW OF SYSTEMS, CENTRAL NERVOUS SYSTEM^DCT||207^DEPRESSION^DCT||||||F|||20050217204000\n" +
+            "OBX|2|SN|5497^CD4 COUNT^DCT||<^10|cells/mm3|10-1500|L|||F|||20050217204000\n" +
+            "OBX|3|NM|5089^WEIGHT (KG)^DCT||25|kg|20-300|L|||F|||20050217204000\n" +
+            "OBX|4|TS|1191^HISTORICAL DRUG STOP DATE^DCT||20050101||||||F|||20050217204000"
+
     val adt: Message = parser.parse(msg)
 
     println("Starting Client")

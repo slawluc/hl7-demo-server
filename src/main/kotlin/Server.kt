@@ -21,6 +21,7 @@ fun main() {
         //http://dev.patientsknowbest.com/home/hl7-api/messages/oru-r01/laboratory
         //https://hapifhir.github.io/hapi-hl7v2/v281/apidocs/ca/uhn/hl7v2/model/v281/message/ORU_R01.html
         //https://hapifhir.github.io/hapi-hl7v2/v281/apidocs/index.html
+        //https://wiki.openmrs.org/display/docs/HL7
 
         registerConnectionListener(MyConnectionListener())
         setExceptionHandler(MyExceptionHandler())
